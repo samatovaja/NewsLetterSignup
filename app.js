@@ -1,24 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCC84wmcs7bI_WUp8OtP7p8xZ8aw1ONBbw",
-  authDomain: "newsletter-88262.firebaseapp.com",
-  projectId: "newsletter-88262",
-  storageBucket: "newsletter-88262.appspot.com",
-  messagingSenderId: "474683582699",
-  appId: "1:474683582699:web:9b9612d0c986db54a276ae",
-  measurementId: "G-78J7YW94B1"
-};
-
-// Initialize Firebase
-const apps = initializeApp(firebaseConfig);
-const analytics = getAnalytics(apps);
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -81,7 +60,7 @@ app.post('/', function(req, res) {
    
 })
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log('Server is running on port 3000')
 })
 
